@@ -1,0 +1,278 @@
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Does it change?</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+        <style>
+            /* #myCanvas{
+                border: 1px #000 solid;
+                background: #f4f4f4;
+            }
+            #box{
+                width: 300px;
+                height: 150px;
+                padding: 10px;
+                border: 1px solid #ccc;
+            } */
+            .nav-scroller .nav {
+                display: flex;
+                flex-wrap: nowrap;
+                padding-bottom: 1rem;
+                margin-top: -1px;
+                overflow-x: auto;
+                text-align: center;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            #box1{
+			width:100px;
+			height:100px;
+			background:#000000;
+			transition: width 2s, height 4s;
+			/* transition-delay:1s; */
+			transition-timing-function: linear;
+		    }
+
+            #box1:hover{
+                width:300px;
+                height:300px;
+            }
+
+            #box2{
+                width:100px;
+                height:100px;
+                position:relative;
+                background-color:red;
+                animation-name:colorchange;
+                animation-duration: 5s;
+                /*
+                animation-iteration-count: 3;
+                animation-direction: reverse;
+                */
+            }
+
+            /*
+            @keyframes colorchange {
+                from {background-color: red;}
+                to {background-color:blue;}
+            }
+            */
+
+            @keyframes colorchange {
+                0% {background-color: red;left:0px;top:0px;}
+                25%{background-color: yellow;left:200px;top:0px;}
+                50%{background-color: green;left:200px;top:200px;}
+                75%{background-color: blue;left:0px;top:200px;}
+                100%{background-color: red;left:0px;top:0px;}
+            }
+
+            a:hover{
+                color: red;
+                font-weight: bold;
+            }
+
+            .myForm input:focus{
+                background: pink;
+                width: 300px;
+            }
+
+            .wrapper{
+                border: 1ps solid #000;
+                width: 400px;
+                height: 400px;
+                position: relative;
+                left: 50px;
+                top: 100px;
+                background-image: url('/data/bg.jpg');
+                background-repeat: no-repeat;
+                background-position: 100px 100px;
+            }
+
+            .inside{
+                border: 1ps solid #ff0000;
+                width: 200px;
+                height: 100px;
+                position: absolute;
+                left: 50px;
+                top: 20px;
+            }
+
+            article{
+                column-count: 3;
+            }
+        </style>
+
+        <!--Drag and Drop-->
+        <!-- <script>
+            function allowDrop(ev){
+                ev.preventDefault();
+            }
+
+            function drag(ev){
+                ev.dataTransfer.setData('text', ev.target.id);
+            }
+
+            function drop(ev){
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData('text');
+                ev.target.appendChild(document.getElementById(data));
+            }
+        </script> -->
+    </head>
+    <body>
+        <!--
+
+        <canvas id="myCanvas" width="300" height="300">
+
+        </canvas>
+
+        <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext('2d');
+
+            //Gradient
+            var grd = ctx.createLinearGradient(0,0,100,0);
+            grd.addColorStop(0,'blue');
+            grd.addColorStop(1, 'white');
+            ctx.fillStyle = grd;
+            ctx.fillRect(10,10,150,150);
+
+            //Text
+            ctx.font = '50px Arial';
+            ctx.strokeStyle = 'red';
+            ctx.strokeText('Hello World', 20, 150);
+
+        </script>
+
+        -->
+
+        <!--
+       
+        <svg width="300" height="300">
+            <circle cx="100" cy="100" r="80" stroke="red" stroke-width="4" fill="green">
+                Sorry, your browser does not support inline SVG
+            </circle>
+        </svg>
+
+        <br>
+
+        <svg width="400" height="200">
+            <rect width="300" height="100" style="fill:rgb(255, 0, 0);stroke-width: 1;stroke: rgb(0, 0, 0);" />
+        </svg>
+     
+        -->
+
+        <!--
+        <div id='name'>
+
+        </div>
+
+        <script>
+            if (typeof(Storage) != 'undefined'){
+                //Store an item
+                localStorage.setItem('name','Suboy');
+
+                //Get item
+                //console.log(localStorage.getItem('name'));
+
+                //Show item
+                document.getElementById('name').innerHTML=localStorage.getItem('name')
+            } 
+            else {
+                console.log('localStorage not available')
+            }
+        -->
+        
+        <!--
+        <div id='box' ondrop="drop(event)" ondragover="allowDrop(event)">
+
+        </div>
+        
+        <img id='image' src='data/logo.png' draggable="true" ondragstart="drag(event)" width="291" height="145"/>
+        -->
+       
+
+        <!-- <div class="wrapper">
+            <div class="inside">
+
+            </div>
+        </div> -->
+
+        <!-- <br>
+
+        <div>
+            <a href="#">Click me</a>
+            <form class="myForm">
+                <input type="text">
+            </form>
+        </div>
+
+        <br>
+
+        <div id="box1"></div>
+        <div id="box2"></div>
+
+        <br> -->
+
+        <!-- <article>
+            Ukraine gần đây liên tục kêu gọi các đồng minh cho phép Kiev sử dụng vũ khí được phương Tây viện trợ để tập kích mục tiêu trong lãnh thổ Nga, trong bối cảnh cục diện chiến sự đang thay đổi nhanh chóng và không tích cực với Kiev. Tổng thống Ukraine Volodymyr Zelensky nhấn mạnh việc tập kích mục tiêu trong lãnh thổ Nga chỉ mang tính phòng thủ.
+        </article> -->
+
+        <!--Direct embedded jquery script-->
+<!--         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+ -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">Top navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </li>
+                </ul>
+                <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+            </div>
+        </nav>
+        <main class="container">
+            <div class="bg-body-tertiary p-5 rounded">
+            <h1>Navbar example</h1>
+            <p class="lead">This example is a quick exercise to illustrate how the top-aligned navbar works. As you scroll, this navbar remains in its original position and moves with the rest of the page.</p>
+            <a class="btn btn-lg btn-primary" href="/docs/5.3/components/navbar/" role="button">View navbar docs &raquo;</a>
+            </div>
+        </main>
+        <script src="node_modules/jquery/dist/jquery.js"></script>
+        <script src="node_modules/bootstrap/js/dist/"></script>
+
+
+        <div class="container">
+            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">
+                Click Me!
+
+            </button>
+
+
+        </div>
+
+    </body>
+
+</html> 
+    
