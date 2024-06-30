@@ -2,10 +2,11 @@
 <html>
     <head>
         <title>Ajax Example</title>
+        <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">
     </head>
 
     <body>
-        <h1 id="mainText">Change this text</h1>
+        <!-- <h1 id="mainText">Change this text</h1>
         <button onclick="changeText()">Change</button>
 
         <script>
@@ -23,6 +24,51 @@
 
                 xhttp.send();
             }
-        </script>
+        </script> -->
+        <div class="container">
+            <h1 class="text-center">Get User Info from Github API</h1>
+            <form id="getInfo">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <button class="btn btn-primary" type='submit'>Get Info</button>
+            </form>
+
+            <div class="container">
+                <h2 class="text-center">User profile retrieved</h2>
+                <div id="profile">
+                    
+                </div>
+            </div>
+            
+            <script>
+                function getProfile(e){
+                    e.preventDefault();
+
+                    var username = document.getElementById('name').value;
+
+                    //console.log(username);
+
+                    var xhttp = new XMLHttpRequest();
+
+                    xhttp.onreadystatechange = function(){
+                        if (xhttp.readyState == 4 && xhttp.status == 200){
+                            var userinfo = xhttp.responseText;
+
+                            document.getElementById('profile').innerHTML = userinfo;
+                        }
+                    }
+
+                    xhttp.open('GET', 'https://api.github.com/users/'+username, true);
+
+                    xhttp.send();
+                }
+
+                //getProfile();
+                document.getElementById('getInfo').addEventListener('submit', getProfile, false);
+            </script>
+        </div>
+        
     </body>
 </html>
