@@ -23,9 +23,7 @@ Template.main.helpers({
       return (
       <div>
       <ul>
-          {{#each todos}}
-            {{> task}}
-          {{/each}}
+          
       </ul>
       </div>
       
