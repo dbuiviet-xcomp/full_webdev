@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "inquirer": "^10.1.8",
     "jquery": "^3.7.1",
-    "meteor": "^3.0.1"
+    "meteor": "^3.0.1",
+    "qr-image": "^3.2.0"
   }
 }
